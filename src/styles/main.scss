@@ -37,7 +37,9 @@ body {
 
     font-family: Arial, sans-serif;
     font-size: 30px;
-    transition: background-color 0.5s ease, transform 0.5s ease;
+    transition:
+      background-color 0.5s ease,
+      transform 0.5s ease;
 
     &:hover {
       cursor: pointer;
@@ -46,7 +48,6 @@ body {
     }
   }
 
-  // Генерация чисел от 1 до 31
   @for $i from 1 through 31 {
     &__day:nth-child(#{$i}) {
       &::before {
@@ -55,7 +56,6 @@ body {
     }
   }
 
-  // Модификаторы дней недели (исправленный порядок с воскресенья)
   $days: (
     sun: 0,
     mon: 1,
@@ -74,7 +74,6 @@ body {
     }
   }
 
-  // Модификаторы длины месяца
   @for $len from 28 through 31 {
     &--month-length_#{$len} {
       .calendar__day:nth-child(n + #{$len + 1}) {
